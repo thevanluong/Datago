@@ -1,0 +1,408 @@
+{
+    "0": {
+        "label": "Have participants been informed of your intention to share the research materials, including their personal data, with third parties (e.g. other researchers, students, etc.)? ",
+        "options": [
+            {
+                "option": "Yes",
+                "value": "1"
+            },
+            {
+                "option": "No",
+                "value": "18"
+            }
+        ],
+        "parent": ""
+    },
+    "1": {
+        "label": "Have participants been informed that their personal data would be shared via a third-party repository (i.e. external to your institution)? ",
+        "options": [
+            {
+                "option": "Yes",
+                "value": "2"
+            },
+            {
+                "option": "No",
+                "value": "14"
+            }
+        ],
+        "parent": "0"
+    },
+    "2": {
+        "label": "Have you requested explicit consent from participants for the sharing of their personal data via a third-party repository? ",
+        "options": [
+            {
+                "option": "Yes",
+                "value": "3"
+            },
+            {
+                "option": "No",
+                "value": "9"
+            }
+        ],
+        "parent": "1"
+    },
+    "3": {
+        "label": "Have participants accepted that their personal data would be shared via a third-party repository? Please note that for consent to be valid, participants must accept explicitly.",
+        "options": [
+            {
+                "option": "Yes",
+                "value": "4"
+            },
+            {
+                "option": "No",
+                "value": "FICHE 7"
+            }
+        ],
+        "parent": "2"
+    },
+    "4": {
+        "label": "Has the deletion of specific identifying variables (e.g. first name, last name, address) been promised to participants?",
+        "options": [
+            {
+                "option": "Yes",
+                "value": "5"
+            },
+            {
+                "option": "No",
+                "value": "8"
+            }
+        ],
+        "parent": "3"
+    },
+    "5": {
+        "label": "Have these identifiers been removed?",
+        "options": [
+            {
+                "option": "Yes",
+                "value": "6"
+            },
+            {
+                "option": "No",
+                "value": "7"
+            }
+        ],
+        "parent": "4"
+    },
+    "6": {
+        "label": "Do you continue to hold participants' contact details (e.g. addresses, telephone numbers, etc.)?\nNote: it is better to delete them!",
+        "options": [
+            {
+                "option": "Yes",
+                "value": "FICHE 5"
+            },
+            {
+                "option": "No",
+                "value": "FICHE 6"
+            }
+        ],
+        "parent": "5"
+    },
+    "7": {
+        "label": "Do you continue to hold participants' contact details (e.g. addresses, telephone numbers, etc.)?\nNote: it is better to delete them!",
+        "options": [
+            {
+                "option": "Yes",
+                "value": "FICHE 3"
+            },
+            {
+                "option": "No",
+                "value": "FICHE 4"
+            }
+        ],
+        "parent": "5"
+    },
+    "8": {
+        "label": "Do you continue to hold participants' contact details (e.g. addresses, telephone numbers, etc.)?\nNote: it is better to delete them!",
+        "options": [
+            {
+                "option": "Yes",
+                "value": "FICHE 1"
+            },
+            {
+                "option": "No",
+                "value": "FICHE 2"
+            }
+        ],
+        "parent": "4"
+    },
+    "9": {
+        "label": "Has the deletion of specific identifying variables (e.g. first name, last name, address) been promised to participants?",
+        "options": [
+            {
+                "option": "Yes",
+                "value": "10"
+            },
+            {
+                "option": "No",
+                "value": "13"
+            }
+        ],
+        "parent": "2"
+    },
+    "10": {
+        "label": "Have these identifiers been removed?",
+        "options": [
+            {
+                "option": "Yes",
+                "value": "11"
+            },
+            {
+                "option": "No",
+                "value": "12"
+            }
+        ],
+        "parent": "9"
+    },
+    "11": {
+        "label": "Do you continue to hold participants' contact details (e.g. addresses, telephone numbers, etc.)?\nNote: it is better to delete them!",
+        "options": [
+            {
+                "option": "Yes",
+                "value": "FICHE 10"
+            },
+            {
+                "option": "No",
+                "value": "FICHE 11"
+            }
+        ],
+        "parent": "10"
+    },
+    "12": {
+        "label": "Do you continue to hold participants' contact details (e.g. addresses, telephone numbers, etc.)?\nNote: it is better to delete them!",
+        "options": [
+            {
+                "option": "Yes",
+                "value": "FICHE 8"
+            },
+            {
+                "option": "No",
+                "value": "FICHE 9"
+            }
+        ],
+        "parent": "10"
+    },
+    "13": {
+        "label": "Do you continue to hold participants' contact details (e.g. addresses, telephone numbers, etc.)?\nNote: it is better to delete them!",
+        "options": [
+            {
+                "option": "Yes",
+                "value": "FICHE 12"
+            },
+            {
+                "option": "No",
+                "value": "FICHE 13"
+            }
+        ],
+        "parent": "9"
+    },
+    "14": {
+        "label": "Do you continue to hold participants' contact details (e.g. addresses, telephone numbers, etc.)?\nNote: it is better to delete them!",
+        "options": [
+            {
+                "option": "Yes",
+                "value": "15"
+            },
+            {
+                "option": "No",
+                "value": "17"
+            }
+        ],
+        "parent": "1"
+    },
+    "15": {
+        "label": "Do you plan to contact them to inform them?",
+        "options": [
+            {
+                "option": "Yes",
+                "value": "FICHE 14"
+            },
+            {
+                "option": "No",
+                "value": "16"
+            }
+        ],
+        "parent": "14"
+    },
+    "16": {
+        "label": "Do you plan to fully anonymize the data?",
+        "options": [
+            {
+                "option": "Yes",
+                "value": "FICHE 15"
+            },
+            {
+                "option": "No",
+                "value": "FICHE 16"
+            }
+        ],
+        "parent": "15"
+    },
+    "17": {
+        "label": "Do you plan to fully anonymize the data?",
+        "options": [
+            {
+                "option": "Yes",
+                "value": "FICHE 17"
+            },
+            {
+                "option": "No",
+                "value": "FICHE 18"
+            }
+        ],
+        "parent": "14"
+    },
+    "18": {
+        "label": "Do you continue to hold participants' contact details (e.g. addresses, telephone numbers, etc.)?\nNote: it is better to delete them!",
+        "options": [
+            {
+                "option": "Yes",
+                "value": "19"
+            },
+            {
+                "option": "No",
+                "value": "21"
+            }
+        ],
+        "parent": "0"
+    },
+    "19": {
+        "label": "Do you plan to (re-)contact them to inform them?",
+        "options": [
+            {
+                "option": "Yes",
+                "value": "FICHE 19"
+            },
+            {
+                "option": "No",
+                "value": "20"
+            }
+        ],
+        "parent": "18"
+    },
+    "20": {
+        "label": "Do you plan to fully anonymize the data?",
+        "options": [
+            {
+                "option": "Yes",
+                "value": "FICHE 20"
+            },
+            {
+                "option": "No",
+                "value": "FICHE 21"
+            }
+        ],
+        "parent": "19"
+    },
+    "21": {
+        "label": "Has full confidentiality been promised?\nE.g. \"only the research team will access the data\".",
+        "options": [
+            {
+                "option": "Yes",
+                "value": "FICHE 22"
+            },
+            {
+                "option": "No",
+                "value": "22"
+            }
+        ],
+        "parent": "18"
+    },
+    "22": {
+        "label": "Has the destruction of all research materials at the end of the research been promised?",
+        "options": [
+            {
+                "option": "Yes",
+                "value": "FICHE 23"
+            },
+            {
+                "option": "No",
+                "value": "23"
+            }
+        ],
+        "parent": "21"
+    },
+    "23": {
+        "label": "Has full anonymisation of the data at the end of the data collection / research project been promised?",
+        "options": [
+            {
+                "option": "Yes",
+                "value": "24"
+            },
+            {
+                "option": "No",
+                "value": "26"
+            }
+        ],
+        "parent": "22"
+    },
+    "24": {
+        "label": "Have you definitely removed all direct identifiers?",
+        "options": [
+            {
+                "option": "Yes",
+                "value": "25"
+            },
+            {
+                "option": "No",
+                "value": "FICHE 26"
+            }
+        ],
+        "parent": "23"
+    },
+    "25": {
+        "label": "Have you definitely removed all indirect identifiers?",
+        "options": [
+            {
+                "option": "Yes",
+                "value": "FICHE 24"
+            },
+            {
+                "option": "No",
+                "value": "FICHE 25"
+            }
+        ],
+        "parent": "24"
+    },
+    "26": {
+        "label": "Is the announced purpose of the collection limited to a project with a well-defined / precise end (e.g. thesis, publication, etc.)?",
+        "options": [
+            {
+                "option": "Yes",
+                "value": "27"
+            },
+            {
+                "option": "No",
+                "value": "FICHE 30"
+            }
+        ],
+        "parent": "23"
+    },
+    "27": {
+        "label": "Have you definitely removed all direct identifiers?",
+        "options": [
+            {
+                "option": "Yes",
+                "value": "28"
+            },
+            {
+                "option": "No",
+                "value": "FICHE 29"
+            }
+        ],
+        "parent": "26"
+    },
+    "28": {
+        "label": "Have you definitely removed all indirect identifiers?",
+        "options": [
+            {
+                "option": "Yes",
+                "value": "FICHE 27"
+            },
+            {
+                "option": "No",
+                "value": "FICHE 28"
+            }
+        ],
+        "parent": "27"
+    }
+}

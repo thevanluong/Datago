@@ -1,0 +1,141 @@
+<html>
+  <head>
+    <!-- Set the character encoding for the document -->
+    <meta charset="UTF-8">
+    
+    <!-- Set the title of the webpage -->
+    <title>DataGo</title>
+    
+    <!-- Include Bootstrap CSS for styling -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Include jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <!-- Include Font Awesome icons CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+  </head>
+  <body>
+    <script>
+      // *** Configuration parameters start ***
+      
+      // Set default language to English
+      var lang = "en";
+
+      // Set the default URL for fetching trees
+      var datagoUrl = "./trees/";
+
+      // Set the default URL for fetching PDFs
+      var pdfUrl = "./files/";
+
+      // Define translations for different languages
+      var translate = { 
+        // French translations
+	  "fr" : {
+	      "sheet": "Fiche",
+	      "text" : "La fiche ci-dessous vous fournira des conseils sur la gestion des données pour vos matériaux de recherche.",
+	      "error" : "DataGo n'est pas accessible pour le moment."
+	  },
+        // English translations
+	  "en" : {
+	      "sheet": "Information sheet",
+	      "text" : "The following factsheet contains further advice about the data management for your research materials.",
+	      "error" : "DataGo is not available at the moment."
+	  }
+      }
+
+      var parent = oldItem = sheet = jList = "";
+
+      // Function to format the displayed item
+      function format(item) {
+        // Check if the first 5 characters are "FICHE"
+	  if (item.substr(0,5) == "FICHE") {
+	      parent = oldItem;
+	      item = item.replace("FICHE", translate[lang]["sheet"]);
+	      url = item.split(' ');
+
+        // Construct the download button and link for the corresponding sheet
+	      code = '<p>' + translate[lang]["text"] + '</p><a class="btn btn-success btn-lg" target="_blank" href="'+ pdfUrl + "Fiche" + url[2]+ ".pdf" + '"><i class="fa fa-download"></i>&nbsp;' + url[0] + '&nbsp;' + url[1] + '&nbsp;' + url[2]  + '</a></p>';
+
+	      $('#submit').hide(); 
+	      $('#restart').show();
+	  }
+        // If it's not "FICHE", continue with other questions
+	  else {
+	      jList = '';
+	      $('#restart').hide();
+	      code = '<p>' + datago[item]['label'] + '</p><div class="list-group btn-group-vertical" role="group" style="max-width:1000px; width:100%">';
+	      $.each(datago[item]['options'], function(index,value) {
+		  code = code+'<a class="list-group-item list-group-item-action btn" style="text-align:left; text-decoration:none; white-space:normal;" href="javascript:format(\'' + value['value'] +'\')"><i class="fa fa-arrow-right"></i>&nbsp;' + value['option'] + '</a>';
+	      });
+	      code = code + '</div>';
+	      if (datago[item]['parent']) {
+		  $('#back').show();
+	      }
+	      else {
+		  $('#back').hide();
+	      }
+	      parent = datago[item]['parent'];
+	      oldItem = item;
+	  }
+	  $('#question').html(code);
+      }
+
+      // Function to go back to the previous question
+      function goback() {
+	  format(parent);
+      }
+
+      // Execute when the document is fully loaded
+      $(document).ready(function(){
+	  param = {};
+	  str = window.location.search.substr(1);
+	  if(str) {
+	      pairs = str.split('&');
+	      for (i=0; i<pairs.length; i++) {
+		  part = pairs[i].split('=');
+		  param[part[0]] = part[1];
+	      }
+	  }
+	  if(param['lang'] && translate[param['lang']]) {
+	      lang = param['lang'];
+	  }
+	  if(param['notitle'] && param['notitle']=='true') {
+	      $('h3').hide();
+	  }
+	  $.getJSON( datagoUrl + "datago-" + lang + ".json")
+	      .done(function( data ) {
+		  datago = data;
+		  $('#buttons').show();
+		  format("0");
+	      })
+
+	      .fail(function(xhr, status, error) {
+		  $('form').html(translate[lang]['error']);
+		  console.log( error );
+	      });
+      });
+    </script>
+
+    <div style="margin: 1rem">
+      <!-- Display the assistant's title and image -->
+      <h3>Your personal assistant</h3>
+      <img src="datago.png" width="208" height="255" />
+      <p />
+      <!-- Introduction about the guideline for data management -->
+      Would you like to know a guideline about the data management for your research materials?
+      <br />
+      Simply answer the questions below to get a personalized answer to your situation.
+      
+      <!-- Display what DataGo suggests -->
+      <h3>DataGo says:</h3>
+      <div id="question" style="margin-bottom: 1rem">
+      </div>
+      <!-- Navigation buttons to move between questions -->
+      <div id="buttons" style="display:none">
+	<a id="back" href="javascript:goback();" class="btn btn-secondary btn-default" style="display:none; text-decoration:none"><i class="fa fa-chevron-left"></i>&nbsp;back</a>
+	<a id="restart" href="javascript:location.reload()" class="btn btn-secondary btn-default" style="display:none; text-decoration:none"><i class="fa fa-arrow-circle-o-left"></i>&nbsp;restart</a>
+      </div>
+    </div>
+  </body>
+</html>
