@@ -1,4 +1,4 @@
-# Datago
+# DataGo
 The assistant who gives you a guideline about the data management for your research materials.
 
 1. [General information](#1-general-information)
